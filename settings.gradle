@@ -1,0 +1,3 @@
+rootProject.name='android-poet-bean'
+include ':app'
+include ':androidpoet-processor'
