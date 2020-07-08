@@ -51,7 +51,6 @@ public class PoetProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
-        System.out.println("------------1111111111111------------------");
         handlePoetCode(set, roundEnvironment);
 
         return true;

@@ -10,6 +10,7 @@ import com.squareup.javapoet.TypeSpec;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
@@ -67,6 +68,12 @@ public class PoetCodeHandler {
                 FieldSpec fieldSpec = FieldSpec.builder(fieldMap.get(field), field)
                         .addModifiers(Modifier.PUBLIC)
                         .initializer("$S", "")
+                        .build();
+                typeSpecB.addField(fieldSpec);
+            } else if (fieldMap.get(field).toString().contains("List<")) {
+                FieldSpec fieldSpec = FieldSpec.builder(fieldMap.get(field), field)
+                        .addModifiers(Modifier.PUBLIC)
+                        .initializer("new $T()", fieldMap.get(field))
                         .build();
                 typeSpecB.addField(fieldSpec);
             } else {

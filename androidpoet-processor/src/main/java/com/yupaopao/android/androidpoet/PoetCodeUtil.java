@@ -19,10 +19,6 @@ import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 
-/**
- * Created by chunsheng.wang on 2018/9/25.
- */
-
 public class PoetCodeUtil {
 
     /**
